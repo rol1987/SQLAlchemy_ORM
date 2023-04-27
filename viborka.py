@@ -1,8 +1,9 @@
 from sqlalchemy import or_ 
-
-from bd import session #Из файла с подключением к базе импортируем сессию
+# from insert_data import insert_data
+from engine import session, engine #Из файла с подключением к базе импортируем сессию
 from table import Publisher, Book, Shop, Stock, Sale #Из файла с моделями импортиуем необходимые модели для запроса
-
+import table
+import insert_data
 
 def get_shops(id_publisher): #Функция принимает обязательный параметр
     items = session.query( #Создаем общее тело запроса на выборку данных и сохраняем в переменную
@@ -20,5 +21,7 @@ def get_shops(id_publisher): #Функция принимает обязател
 
 
 if __name__ == '__main__':
+    insert_data.insert_data(session)
+    table.create_tables(engine)
     id_publisher = input("Введите имя автора или его ID: ") #Просим клиента ввести имя или айди публициста и данные сохраняем в переменную
     get_shops(id_publisher) #Вызываем функцию получения данных из базы, передавая в функцию данные, которые ввел пользователь строкой выше    
