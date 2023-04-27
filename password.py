@@ -1,1 +1,0 @@
-DSN = 'postgresql://postgres:XXXXXXXX@localhost:5432/netology_db'

@@ -1,13 +1,12 @@
 import table
-import password
-import insert_data
+from insert_data import insert_data
 
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-
-engine = create_engine(password.DSN)
+DSN = 'postgresql://postgres:83FrkWrt@localhost:5432/netology_db'
+engine = create_engine(DSN)
 
 
 table.create_tables(engine)
