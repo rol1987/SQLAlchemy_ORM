@@ -1,5 +1,5 @@
 import table
-from insert_data import insert_data
+import insert_data
 
 
 from sqlalchemy import create_engine
