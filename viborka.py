@@ -21,7 +21,8 @@ def get_shops(find_publisher): #Функция принимает обязате
 
 
 if __name__ == '__main__':
-    insert_data.insert_data(session)
     table.create_tables(engine)
+    insert_data.insert_data(session)
+    
     find_publisher = input("Введите имя автора или его ID: ") #Просим клиента ввести имя или айди публициста и данные сохраняем в переменную
     get_shops(find_publisher) #Вызываем функцию получения данных из базы, передавая в функцию данные, которые ввел пользователь строкой выше    
